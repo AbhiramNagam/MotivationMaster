@@ -33,12 +33,10 @@
   ],
   "host_permissions": [
     "*://*.spokeneagle.com/*",
-    "http://*/*",
-    "https://*/*"
+	"*://abhiramnagam.tech/*"
   ],
   "author": "Spoken Eagle",
   "homepage_url": "https://motivationmaster.spokeneagle.com/"
-
 }
 
 

@@ -1,7 +1,7 @@
 // All about the fetching and storing of the image and quote from the server and updating the UI.
 class FetchAndUpdate_quote_image{
     constructor(url) {
-        this.url = 'https://api-motivationmaster.spokeneagle.com/extension/everyday.json';
+        this.url = 'https://abhiramnagam.tech/tryActions2/ext.json';
         this.dateSet = new Set(JSON.parse(localStorage.getItem('dateSet')));
 
         let dateObj=new Date();
