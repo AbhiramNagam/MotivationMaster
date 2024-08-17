@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tab - Motivation Master</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div class="main">
+        <h1 class="quote" id="quote"></h1>
+        <h1 class="author" id="author"></h1>
+    </div>
+
+    <div class="container">
+        <div class="searchStuff">
+            <div class="searchBarAndSuggestions">
+                <form id="search-form" action="https://www.google.com/search" method="get" autocomplete="off">
+                    <input type="text" name="q" placeholder="Search Google" class="search-input" id="search-bar">
+                </form>
+                <div id="recent-searches" class="suggestions"></div>
+            </div>
+            <div class="goButton">
+                <input id="go-button" type="submit" value="Go">
+            </div>
+        </div>
+
+        <div class="shortcutsDiv">
+
+        </div>
+        <h1 id="fetchingImage">Fetching image from the server...</h1>
+    </div>
+
+    <div class="credits">
+        <h1>Developed by <a href="https://www.spokeneagle.com" >SpokenEagle.com</a></h1>
+    </div>
+
+    <div id="shareDiv">
+        <button id="shareButton">🔗 Share</button>
+    </div>
+
+    <div id="shareMessage">Link copied to clipboard</div>
+
+    <script src="script_classed.js"></script>
+<!--        <script src="dist/bundle.js"></script>-->
+<!--        <script src="dist/bundle-jscrambler2.js"></script>-->
+<!---->
+    </body>
+</html>

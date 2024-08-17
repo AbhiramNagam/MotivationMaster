@@ -1,0 +1,473 @@
+/*-----------------------------------------------------------------------------------*/
+/* ImageAndQuote */
+/* body, .container are common in ImageAndQuote, SearchStuff,and Shortcuts */
+/* And body is common in OtherStuff as well, it doesnt have .container */
+
+body{
+    background-color: #545454;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    display: flex;
+    margin: 0;
+    background-size: cover;
+    padding: 0;
+}
+.container {
+    z-index: 1;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 50%;
+}
+/*End for common elements*/
+
+
+h1{
+    text-align: center;
+    color: wheat;
+    font-size:xx-large;
+}
+
+.main{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.quote{
+    /* important */
+    margin: 0;
+}
+
+.author{
+    /* important */
+    margin: 0;
+    float: right;
+}
+
+.quote{
+    font-size: 2em; /* Default font size */
+}
+.author{
+    font-size: 1.5em;  /* Default font size*/
+}
+
+/* Reduce font size when viewport width is 1024px or less */
+@media (max-width: 1024px) {
+    .quote{
+        font-size: 1.5em;
+    }
+    .author{
+        font-size: 1.125em;
+    }
+
+}
+
+/* Reduce font size when viewport height is 600px or less */
+@media (max-height: 600px) {
+    .quote {
+        font-size: 1.5em;
+    }
+    .author{
+        font-size: 1.125em;
+    }
+}
+
+/* Further reduce font size when viewport height is 500px or less */
+@media (max-height: 500px) {
+    .quote {
+        font-size: 1.2em;
+    }
+    .author{
+        font-size: 0.9em;
+    }
+}
+
+#fetchingImage{
+    display: none;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Completed ImageAndQuote - v1 */
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*Search Stuff */
+
+.searchStuff{
+    position: fixed;
+    top: 0;
+    width: 80%;
+}
+
+.searchBarAndSuggestions{
+    z-index: 1;
+    float: left;
+    width: 91%;
+    display: flex;
+    position: relative;
+}
+
+form {
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: none; /* Remove border */
+    border-radius: 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    background-color: #ffffff; /* pure white */
+    font-size: 16px; /* Increase font size */
+}
+
+.changeCurvature{
+    border-bottom-left-radius:0;
+    border-bottom-right-radius: 0;
+    border-bottom: 2px solid black;
+}
+
+.search-input:focus{
+    outline: none;
+}
+
+
+.suggestions {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    background-color: #ffffff; /* pure white */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    transition: max-height 0.15s ease-out;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.suggestions.visible {
+    display: block;
+}
+
+.suggestions .selected {
+    background-color: #a9a9a9; /* Light grey background */
+}
+
+.search-item {
+    display: flex;
+    /*justify-content: flex-start;*/
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+.matched {
+    font-weight: bold;
+}
+
+.unmatched {
+    font-weight: normal;
+}
+
+.matched, .unmatched {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.delete-btn {
+    cursor: pointer;
+    color: red;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px; /* Adjust as needed */
+    height: 15px; /* Adjust as needed */
+}
+
+.delete-btn:hover {
+    border-radius: 25px; /* Makes the border round */
+    border: 1px solid #000; /* Change this to the color you want */
+}
+
+
+.goButton input[type="submit"] {
+    background: linear-gradient(to right, #ff9966, #ff5e62); /* Gradient background */
+    border: none; /* Remove border */
+    color: white; /* White text color */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; /* Pointer/hand icon on hover */
+    transition-duration: 0.4s; /* Transition effect */
+    padding: 8px;
+    width: 8%;
+    float: right;
+
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* Shadow effect */
+}
+
+.goButton input[type="submit"]:hover {
+    background: linear-gradient(to right, #fc6076, #ff9a44); /* Darker gradient on hover */
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); /* Darker shadow on hover */
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/* Completed SearchStuff - v1*/
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*Shortcuts*/
+
+.shortcutsDiv {
+    z-index: -1;
+    width: 80%;
+    position: absolute;
+    top: 70px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    grid-gap: 1%;
+}
+
+
+.shortcut {
+    position: relative;
+    text-align: center;
+    padding: 8%;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shortcut:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.shortcut a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.shortcut img {
+    width: 32px;
+    margin-bottom: 5%;
+}
+.add-shortcut-button {
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.shortcut-actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.ellipsis-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.ellipsis-icon:hover {
+    background-color: #e0e0e0;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1;
+    min-width: 120px;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.loading-emoji{
+    font-size: 32px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/* Completed Shortcuts - v1*/
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* OtherStuff */
+
+/* Credits To SpokenEagle */
+.credits{
+    z-index: 1;
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    text-align: center;
+    width: auto;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.credits h1{
+    color: white;
+    font-size: medium;
+}
+
+@media (max-width: 600px) {
+    .credits h1{
+        font-size: small;
+    }
+}
+
+@media (max-width: 500px) {
+    .credits h1{
+        font-size: x-small;
+    }
+}
+
+.credits a{
+    color: #09f528;
+    text-decoration: none;
+}
+
+.credits a:hover{
+    color: yellow;
+    font-size: medium;
+    text-decoration: underline;
+}
+
+/*Share Button and it's animations */
+#shareDiv {
+    z-index: 1;
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+}
+
+#shareButton {
+    background-color: #02a0d7; /* Blue */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease 0s;
+}
+
+/* Default*/
+#shareButton{
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+/* Reduce padding and font size when viewport width is 600px or less */
+@media (max-width: 600px) {
+    #shareButton {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Further reduce padding and font size when viewport width is 500px or less */
+@media (max-width: 500px) {
+    #shareButton {
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+}
+
+#shareButton:hover {
+    background-color: #006994;
+    color: white;
+}
+
+#shareMessage {
+    position: absolute;
+    right: 0;
+    transform: translateX(100%);
+    animation: slideInOut 1.67s forwards;
+    display: none;
+    background-color: #545454; /* Dark grey */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    text-align: center;
+    z-index: 1000;
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Completed OtherStuff - v1 */
+

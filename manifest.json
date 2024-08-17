@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Motivation Master - Daily dose of motivation",
+  "version": "1.0",
+  "description": "Daily motivational quotes displayed on stunning nature backgrounds. This extension transforms your new tab into a source of inspiration with a new quote every day.",
+  "icons": {
+    "16": "images/lightning_bolt_logo.png",
+    "48": "images/lightning_bolt_logo.png",
+    "128": "images/lightning_bolt_logo.png"
+  },
+  "action": {
+    "default_title": "Motivation Master - Daily dose of motivation",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/lightning_bolt_logo.png",
+      "48": "images/lightning_bolt_logo.png",
+      "128": "images/lightning_bolt_logo.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "history",
+    "notifications",
+    "alarms"
+  ],
+  "host_permissions": [
+    "*://*.spokeneagle.com/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "author": "Spoken Eagle",
+  "homepage_url": "https://motivationmaster.spokeneagle.com/"
+
+}
+
+
